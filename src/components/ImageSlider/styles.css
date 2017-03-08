@@ -1,0 +1,57 @@
+.ImageSlider {
+  width: 80%;
+  overflow: hidden;
+  background-color: rgba(0,0,0,.9);
+  border: 7px solid rgba(0,0,0,.9);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ImageSlider__Wrapper {
+  position: relative;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	text-align: left;
+}
+
+.ImageSlider__Image {
+  width: 100%;
+  height: auto;
+	float: left;
+  display: none;
+  transition: opacity 1s;
+}
+
+.ImageSlider__Image--transition {
+  opacity: 0;
+  display: block;
+  position: absolute;
+}
+
+.ImageSlider__Image--active {
+  opacity: 1;
+  display: block;
+}
+
+.ImageSlider__Pager {
+  display: flex;
+  align-items: center;
+  margin-top: 7px;
+  padding: 5px;
+}
+
+.ImageSlider__Page {
+  height: .4rem;
+  width: .4rem;
+  background-color: black;
+  border: 4px solid white;
+  border-radius: 50px;
+  margin-right: 3px;
+}
+
+.ImageSlider__Page--active {
+  border-color: #0099CC;
+}

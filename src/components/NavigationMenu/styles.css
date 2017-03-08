@@ -1,0 +1,12 @@
+.NavigationMenu__Link {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  margin-right: 2rem;
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.NavigationMenu__Link:last-child {
+  margin-right: 0;
+}
