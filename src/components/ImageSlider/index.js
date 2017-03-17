@@ -58,7 +58,7 @@ class ImageSlider extends Component {
         <div className="ImageSlider__Wrapper">
           { this.props.images.map((image, index) => {
             const slideClasses = `ImageSlider__Image ${this.isActive(index) ? 'ImageSlider__Image--active' : ''} ${this.transitionClass(index)}`;
-            return <img src={image.src} alt={image.alt} key={index} className={slideClasses} />
+            return <img src={image} alt={index + 1} key={index} className={slideClasses} />
           })}
         </div>
         <div className="ImageSlider__Pager">

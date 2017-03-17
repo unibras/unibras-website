@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import { ImageSlider } from './components/ImageSlider';
 import { NavigationMenu } from './components/NavigationMenu';
-import logo from './logo.svg';
+import logo from './images/logo.png';
+import img1 from './images/image1.jpg';
+import img2 from './images/image2.jpg';
+import img3 from './images/image3.jpg';
+import img4 from './images/image4.jpg';
+import img5 from './images/image5.jpg';
+import img6 from './images/image6.jpg';
+import img7 from './images/image7.jpg';
 import './App.css';
 
 class App extends Component {
@@ -9,34 +16,13 @@ class App extends Component {
     super(props);
     this.state = {
       images: [
-        {
-          src: '/images/image1.jpg',
-          alt: '1'
-        },
-        {
-          src: '/images/image2.jpg',
-          alt: '2'
-        },
-        {
-          src: '/images/image3.jpg',
-          alt: '3'
-        },
-        {
-          src: '/images/image4.jpg',
-          alt: '4'
-        },
-        {
-          src: '/images/image5.jpg',
-          alt: '5'
-        },
-        {
-          src: '/images/image6.jpg',
-          alt: '6'
-        },
-        {
-          src: '/images/image7.jpg',
-          alt: '7'
-        }
+        img1,
+        img2,
+        img3,
+        img4,
+        img5,
+        img6,
+        img7
       ]
     }
   }
@@ -45,7 +31,7 @@ class App extends Component {
       <div className="App">
 
         <div className="App-header">
-          <img src="images/logo.png" className="App-logo" alt="logo" />
+          <img src={logo} className="App-logo" alt="logo" />
           <NavigationMenu />
         </div>
 
