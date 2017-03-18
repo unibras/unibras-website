@@ -1,50 +1,40 @@
 import React, { Component } from 'react';
-import { ImageSlider } from './components/ImageSlider';
-import { NavigationMenu } from './components/NavigationMenu';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import NavigationMenu from './components/NavigationMenu';
+import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import CompanyPage from './pages/CompanyPage';
+import ProductsPage from './pages/ProductsPage';
+import GalleryPage from './pages/GalleryPage';
+import NewsPage from './pages/NewsPage';
+import VideosPage from './pages/VideosPage';
+import ContactPage from './pages/ContactPage';
 import logo from './images/logo.png';
-import img1 from './images/image1.jpg';
-import img2 from './images/image2.jpg';
-import img3 from './images/image3.jpg';
-import img4 from './images/image4.jpg';
-import img5 from './images/image5.jpg';
-import img6 from './images/image6.jpg';
-import img7 from './images/image7.jpg';
 import './App.css';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      images: [
-        img1,
-        img2,
-        img3,
-        img4,
-        img5,
-        img6,
-        img7
-      ]
-    }
-  }
   render() {
     return (
-      <div className="App">
+      <Router>
+        <div className="App">
+          <div className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <NavigationMenu />
+          </div>
 
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <NavigationMenu />
-        </div>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/empresa" component={CompanyPage} />
+          <Route exact path="/productos" component={ProductsPage} />
+          <Route exact path="/galeria-de-productos" component={GalleryPage} />
+          <Route exact path="/novedades" component={NewsPage} />
+          <Route exact path="/videos" component={VideosPage} />
+          <Route exact path="/contacto" component={ContactPage} />
 
-        <div className="App-body">
-          <ImageSlider images={this.state.images} />
+          <Footer className="App-footer" />
         </div>
-
-        <div className="App-footer">
-          Footer
-        </div>
-      </div>
+      </Router>
     );
   }
 }
 
-export default App;
+export default App

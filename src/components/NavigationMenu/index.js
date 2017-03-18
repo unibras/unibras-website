@@ -1,14 +1,39 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './styles.css';
 
-export const NavigationMenu = () => (
+const NavigationMenu = () => (
   <nav>
-    <a className="NavigationMenu__Link" href="">Home</a>
-    <a className="NavigationMenu__Link" href="">Empresa</a>
-    <a className="NavigationMenu__Link" href="">Productos</a>
-    <a className="NavigationMenu__Link" href="">Galería de productos</a>
-    <a className="NavigationMenu__Link" href="">Novedades</a>
-    <a className="NavigationMenu__Link" href="">Videos</a>
-    <a className="NavigationMenu__Link" href="">Contacto</a>
+    <NavLink
+        exact
+        activeClassName="NavigationMenu__Link--active"
+        className="NavigationMenu__Link"
+        to="/">Home</NavLink>
+    <NavLink
+        activeClassName="NavigationMenu__Link--active"
+        className="NavigationMenu__Link"
+        to="/empresa">Empresa</NavLink>
+    <NavLink
+        activeClassName="NavigationMenu__Link--active"
+        className="NavigationMenu__Link"
+        to="/productos">Productos</NavLink>
+    <NavLink
+        activeClassName="NavigationMenu__Link--active"
+        className="NavigationMenu__Link"
+        to="/galeria-de-productos">Galería de productos</NavLink>
+    <NavLink
+        activeClassName="NavigationMenu__Link--active"
+        className="NavigationMenu__Link"
+        to="/novedades">Novedades</NavLink>
+    <NavLink
+        activeClassName="NavigationMenu__Link--active"
+        className="NavigationMenu__Link"
+        to="/videos">Videos</NavLink>
+    <NavLink
+        activeClassName="NavigationMenu__Link--active"
+        className="NavigationMenu__Link"
+        to="/contacto">Contacto</NavLink>
   </nav>
 )
+
+export default NavigationMenu;

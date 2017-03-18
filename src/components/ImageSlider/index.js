@@ -12,15 +12,11 @@ class ImageSlider extends Component {
   }
 
   componentWillMount() {
-    this.cancelInterval = setInterval(() => {
-        this.advance();
-      },
-      5000
-    )
+    this._interval = setInterval(() => this.advance(), 5000);
   }
 
   componentWillUnmount() {
-    this.cancelInterval();
+    clearInterval(this._interval);
   }
 
   advance() {
@@ -76,4 +72,4 @@ ImageSlider.propTypes = {
   images: React.PropTypes.array.isRequired
 };
 
-export { ImageSlider };
+export default ImageSlider;

@@ -3,10 +3,13 @@
   text-decoration: none;
   color: white;
   margin-right: 2rem;
-  font-size: 12px;
-  font-weight: lighter;
+  font-size: 1.2rem;
 }
 
 .NavigationMenu__Link:last-child {
   margin-right: 0;
+}
+
+.NavigationMenu__Link--active {
+  color: #61C2F3;
 }
