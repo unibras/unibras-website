@@ -23,12 +23,12 @@ class App extends Component {
           </div>
 
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/empresa" component={CompanyPage} />
-          <Route exact path="/productos" component={ProductsPage} />
-          <Route exact path="/galeria-de-productos" component={GalleryPage} />
-          <Route exact path="/novedades" component={NewsPage} />
-          <Route exact path="/videos" component={VideosPage} />
-          <Route exact path="/contacto" component={ContactPage} />
+          <Route path="/empresa" component={CompanyPage} />
+          <Route path="/productos" component={ProductsPage} />
+          <Route path="/galeria-de-productos" component={GalleryPage} />
+          <Route path="/novedades" component={NewsPage} />
+          <Route path="/videos" component={VideosPage} />
+          <Route path="/contacto" component={ContactPage} />
 
           <Footer className="App-footer" />
         </div>
