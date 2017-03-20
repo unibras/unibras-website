@@ -8,7 +8,9 @@ function sortPages(a, b) {
 }
 
 function findCurrentPage(path, pages) {
-  return pages.find(page => (`/${page.id}` === path || (page.position === 1 && path === '/')));
+  const pathParts = path.split('/');
+  return pages.find(currentPage => (currentPage.id === pathParts[1] ||
+    (currentPage.position === 1 && path === '/')));
 }
 
 class NavigationMenu extends React.Component {

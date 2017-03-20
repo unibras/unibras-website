@@ -1,0 +1,27 @@
+.PageBody {
+  width: 80%;
+  background-color: rgba(0,0,0,.9);
+  border-radius: 2px;
+  padding: 2rem;
+  display: flex;
+  color: white;
+}
+
+.PageBody__Description {
+  flex-grow: 1;
+  flex-basis: 50%;
+  height: 50vh;
+  overflow: auto;
+  padding-right: 2rem;
+}
+
+.PageBody__Gallery {
+  flex-grow: 1;
+  flex-basis: 50%;
+}
+
+.PageBody__Title {
+  display: inline-block;
+  margin: 0;
+  line-height: 1;
+}

@@ -1,0 +1,37 @@
+.ImageGallery {
+  width: 80%;
+  overflow: hidden;
+  background-color: rgba(0,0,0,.9);
+  border: 7px solid rgba(0,0,0,.9);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ImageGallery__Wrapper {
+  position: relative;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	text-align: left;
+}
+
+.ImageGallery__Image {
+  width: 100%;
+  height: auto;
+	float: left;
+  display: none;
+  transition: opacity 1s;
+}
+
+.ImageGallery__Image--transition {
+  opacity: 0;
+  display: block;
+  position: absolute;
+}
+
+.ImageGallery__Image--active {
+  opacity: 1;
+  display: block;
+}
