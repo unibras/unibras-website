@@ -1,0 +1,15 @@
+.Header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: .2rem 1rem;
+  background-color: rgba(0,0,0,.85);
+  color: white;
+}
+
+.Headder__Logo {
+  height: 10rem;
+  margin-bottom: -3.6rem;
+  position: relative;
+  z-index: 999;
+}

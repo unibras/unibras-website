@@ -1,9 +1,21 @@
+.NavigationMenu {
+  text-align: right;
+  overflow: hidden;
+}
+
 .NavigationMenu__Link {
   text-transform: uppercase;
   text-decoration: none;
   color: white;
-  margin-right: 2rem;
-  font-size: 1.2rem;
+  margin-right: 2.2rem;
+  font-size: 1.25rem;
+  font-weight: 200;
+  font-family: var(--font-family-secondary);
+  transition: color .25s;
+}
+
+.NavigationMenu__Link:hover {
+  color: var(--color-primary);
 }
 
 .NavigationMenu__Link:last-child {
@@ -11,5 +23,21 @@
 }
 
 .NavigationMenu__Link--active {
-  color: #61C2F3;
+  color: var(--color-primary);
+}
+
+.NavigationMenu__Link--Secondary {
+  font-size: 1.1rem;
+}
+
+.NavigationMenu__Secondary {
+  transition: height .5s, opacity 1s;
+  height: 0;
+  opacity: 0;
+}
+
+.NavigationMenu__Secondary--open {
+  transition: height .5s, opacity 1.5s;
+  height: 2rem;
+  opacity: 1;
 }

@@ -49,16 +49,17 @@ class ImageSlider extends Component {
   }
 
   render() {
+    const { images } = this.props;
     return (
       <div className="ImageSlider">
         <div className="ImageSlider__Wrapper">
-          { this.props.images.map((image, index) => {
+          { images.map((image, index) => {
             const slideClasses = `ImageSlider__Image ${this.isActive(index) ? 'ImageSlider__Image--active' : ''} ${this.transitionClass(index)}`;
-            return <img src={image} alt={index + 1} key={index} className={slideClasses} />
+            return <img src={image.url} alt={image.description} key={index} className={slideClasses} />
           })}
         </div>
         <div className="ImageSlider__Pager">
-          { this.props.images.map((image, index) => {
+          { images.map((image, index) => {
             const pageClasses = `ImageSlider__Page ${this.isActive(index) ? 'ImageSlider__Page--active' : ''}`;
             return <div key={index} className={pageClasses}></div>
           })}

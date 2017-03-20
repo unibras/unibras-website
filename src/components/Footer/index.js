@@ -5,7 +5,7 @@ import './styles.css';
 const Footer = (props) => {
   const today = new Date();
   const year = today.getFullYear();
-  const revision = '0.2';
+  const revision = '0.3';
 
   return (
     <div className={classnames(props.className, "Footer")}>

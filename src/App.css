@@ -4,29 +4,9 @@
   height: 100%;
 }
 
-.App-logo {
-  height: 100px;
-  margin-bottom: -40px;
-  position: relative;
-  z-index: 999;
-}
-
-.App-header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  padding: .4rem;
-  background-color: rgba(0,0,0,.8);
-  color: white;
-}
-
-.App-body {
+.App__Body {
   display: flex;
   flex-grow: 1;
   align-items: center;
   justify-content: center;
-}
-
-.App-intro {
-  font-size: large;
 }

@@ -1,4 +1,13 @@
-@import 'https://fonts.googleapis.com/css?family=Arimo';
+@import url('https://fonts.googleapis.com/css?family=Roboto|Ubuntu');
+
+:root {
+  --font-size-base: 1.4rem;
+  --line-height-base: 1.42857143;
+  --font-family-secondary: 'Ubuntu', sans-serif;
+  --font-family-primary: 'Roboto', sans-serif;
+
+  --color-primary: #63C3F3;
+}
 
 html,
 body,
@@ -14,9 +23,9 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Arimo', sans-serif;
-  font-size: 1.4rem;
-  line-height: 1.42857143;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
   background-image: url('images/background1.jpg');
@@ -24,6 +33,6 @@ body {
 }
 
 a {
-  color: #63C3F3;
+  color: var(--color-primary);
   text-decoration: none;
 }

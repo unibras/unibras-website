@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import Rebase from 're-base';
 import Footer from './components/Footer';
+import Header from './components/Header';
+import Page from './components/Page';
 import './App.css';
 
 let base = Rebase.createClass({
@@ -32,6 +34,14 @@ class App extends Component {
     return (
       <Router hashType="hashbang">
         <div className="App">
+          <Header siteMap={siteMap} />
+          <Route
+              path="/:page?/:subpage?"
+              render={({match}) => (
+                <Page siteMap={siteMap} pathname={match.params.page} subpathname={match.params.subpage}/>
+              )}
+          />
+          <Footer />
         </div>
       </Router>
     );

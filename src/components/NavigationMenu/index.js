@@ -1,39 +1,70 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import classnames from 'classnames';
 import './styles.css';
 
-const NavigationMenu = () => (
-  <nav>
-    <NavLink
-        exact
-        activeClassName="NavigationMenu__Link--active"
-        className="NavigationMenu__Link"
-        to="/">Home</NavLink>
-    <NavLink
-        activeClassName="NavigationMenu__Link--active"
-        className="NavigationMenu__Link"
-        to="/empresa">Empresa</NavLink>
-    <NavLink
-        activeClassName="NavigationMenu__Link--active"
-        className="NavigationMenu__Link"
-        to="/productos">Productos</NavLink>
-    <NavLink
-        activeClassName="NavigationMenu__Link--active"
-        className="NavigationMenu__Link"
-        to="/galeria-de-productos">Galería de productos</NavLink>
-    <NavLink
-        activeClassName="NavigationMenu__Link--active"
-        className="NavigationMenu__Link"
-        to="/novedades">Novedades</NavLink>
-    <NavLink
-        activeClassName="NavigationMenu__Link--active"
-        className="NavigationMenu__Link"
-        to="/videos">Videos</NavLink>
-    <NavLink
-        activeClassName="NavigationMenu__Link--active"
-        className="NavigationMenu__Link"
-        to="/contacto">Contacto</NavLink>
-  </nav>
-)
+function sortPages(a, b) {
+  return a.position - b.position;
+}
+
+function findCurrentPage(path, pages) {
+  return pages.find(page => (`/${page.id}` === path || (page.position === 1 && path === '/')));
+}
+
+class NavigationMenu extends React.Component {
+  render() {
+    const { siteMap } = this.props;
+    const {
+      router: {
+        route: {
+          location: {
+            pathname
+          }
+        }
+      }
+    } = this.context;
+    const pages = siteMap.sort(sortPages);
+    const currentPage = findCurrentPage(pathname, pages);
+
+    return (
+      <nav className={classnames(this.props.className, "NavigationMenu")}>
+        <div className="NavigationMenu__Main">
+          { pages.map((page) => {
+            const to = `/${page.position === 1 ? '' : page.id}`;
+            return (
+              <NavLink
+                  key={to}
+                  exact
+                  activeClassName="NavigationMenu__Link--active"
+                  className="NavigationMenu__Link"
+                  to={to}>{page.title}</NavLink>
+            );
+          })}
+        </div>
+        <div className={classnames("NavigationMenu__Secondary", {["NavigationMenu__Secondary--open"]: currentPage.subsections})}>
+          { currentPage && currentPage.subsections && currentPage.subsections.sort(sortPages).map((subpage) => {
+            const to = `/${currentPage.id}/${subpage.id}`;
+            return (
+              <NavLink
+                  key={to}
+                  exact
+                  activeClassName="NavigationMenu__Link--active"
+                  className="NavigationMenu__Link NavigationMenu__Link--Secondary"
+                  to={to}>{subpage.title}</NavLink>
+            );
+          })}
+        </div>
+      </nav>
+    );
+  }
+}
+
+NavigationMenu.contextTypes = {
+  router: React.PropTypes.object.isRequired
+};
+
+NavigationMenu.propTypes = {
+  siteMap: React.PropTypes.array.isRequired
+};
 
 export default NavigationMenu;
