@@ -1,36 +1,37 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import NavigationMenu from './components/NavigationMenu';
+import { HashRouter as Router, Route } from 'react-router-dom';
+import Rebase from 're-base';
 import Footer from './components/Footer';
-import HomePage from './pages/HomePage';
-import CompanyPage from './pages/CompanyPage';
-import ProductsPage from './pages/ProductsPage';
-import GalleryPage from './pages/GalleryPage';
-import NewsPage from './pages/NewsPage';
-import VideosPage from './pages/VideosPage';
-import ContactPage from './pages/ContactPage';
-import logo from './images/logo.png';
 import './App.css';
 
+let base = Rebase.createClass({
+  apiKey: "AIzaSyADDtHRdt0CYOy3uTQCBpJZ2iRfMQo_S1U",
+  authDomain: "unibras-website.firebaseapp.com",
+  databaseURL: "https://unibras-website.firebaseio.com",
+  storageBucket: "unibras-website.appspot.com"
+});
+
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      siteMap: []
+    }
+  }
+  componentDidMount() {
+    this.ref = base.bindToState('site-map', {
+      context: this,
+      asArray: true,
+      state: 'siteMap'
+    })
+  }
+
   render() {
+    const { siteMap } = this.state;
+    if (!siteMap.length) return null;
     return (
-      <Router>
+      <Router hashType="hashbang">
         <div className="App">
-          <div className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <NavigationMenu />
-          </div>
-
-          <Route exact path="/" component={HomePage} />
-          <Route path="/empresa" component={CompanyPage} />
-          <Route path="/productos" component={ProductsPage} />
-          <Route path="/galeria-de-productos" component={GalleryPage} />
-          <Route path="/novedades" component={NewsPage} />
-          <Route path="/videos" component={VideosPage} />
-          <Route path="/contacto" component={ContactPage} />
-
-          <Footer className="App-footer" />
         </div>
       </Router>
     );
