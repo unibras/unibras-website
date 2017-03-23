@@ -26,7 +26,8 @@ class ImageGallery extends Component {
     const newIndex = (currentIndex >= images.length - 1) ? 0 : currentIndex + 1;
     this.setState({
       currentIndex: newIndex
-    })
+    });
+    this.props.onIndexChange && this.props.onIndexChange(newIndex);
   }
 
   isActive(index) {
@@ -65,7 +66,8 @@ class ImageGallery extends Component {
 };
 
 ImageGallery.propTypes = {
-  images: React.PropTypes.array.isRequired
+  images: React.PropTypes.array.isRequired,
+  onIndexChange: React.PropTypes.func
 };
 
 export default ImageGallery;

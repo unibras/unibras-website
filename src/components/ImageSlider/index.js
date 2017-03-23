@@ -1,31 +1,15 @@
 import React, { Component } from 'react';
 import './styles.css';
+import ImageGallery from '../ImageGallery';
 
 class ImageSlider extends Component {
   constructor(props) {
     super(props);
     this.state = {
       currentIndex: 0
-    }
+    };
 
-    this.advance = this.advance.bind(this);
-  }
-
-  componentWillMount() {
-    this._interval = setInterval(() => this.advance(), 5000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this._interval);
-  }
-
-  advance() {
-    const { currentIndex } = this.state;
-    const { images } = this.props;
-    const newIndex = (currentIndex >= images.length - 1) ? 0 : currentIndex + 1;
-    this.setState({
-      currentIndex: newIndex
-    })
+    this.onIndexChange = this.onIndexChange.bind(this);
   }
 
   isActive(index) {
@@ -35,17 +19,8 @@ class ImageSlider extends Component {
     }
   }
 
-  transitionClass(index) {
-    const { currentIndex } = this.state;
-    const { images } = this.props;
-
-    if (index === currentIndex - 1) {
-      return 'ImageSlider__Image--transition';
-    }
-    if (currentIndex === 0 && index === images.length - 1) {
-      return 'ImageSlider__Image--transition';
-    }
-    return '';
+  onIndexChange(currentIndex) {
+    this.setState({currentIndex});
   }
 
   render() {
@@ -53,10 +28,7 @@ class ImageSlider extends Component {
     return (
       <div className="ImageSlider">
         <div className="ImageSlider__Wrapper">
-          { images.map((image, index) => {
-            const slideClasses = `ImageSlider__Image ${this.isActive(index) ? 'ImageSlider__Image--active' : ''} ${this.transitionClass(index)}`;
-            return <img src={image.url} alt={image.description} key={index} className={slideClasses} />
-          })}
+          <ImageGallery images={images} onIndexChange={this.onIndexChange}/>
         </div>
         <div className="ImageSlider__Pager">
           { images.map((image, index) => {

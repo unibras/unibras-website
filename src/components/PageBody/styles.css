@@ -10,7 +10,7 @@
 .PageBody__Description {
   flex-grow: 1;
   flex-basis: 50%;
-  height: 50vh;
+  height: 37vh;
   overflow: auto;
   padding-right: 2rem;
 }
