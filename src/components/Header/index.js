@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import NavigationMenu from '../../components/NavigationMenu';
-import logo from '../../images/logo.png';
+import logo from '../../images/logo.svg';
 import './styles.css';
 
 const Header = (props) => {
