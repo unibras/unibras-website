@@ -33,10 +33,11 @@ class NavigationMenu extends React.Component {
         <div className="NavigationMenu__Main">
           { pages.map((page) => {
             const to = `/${page.position === 1 ? '' : page.id}`;
+            const isExact = page.position === 1 ? true : false;
             return (
               <NavLink
                   key={to}
-                  exact
+                  exact={isExact}
                   activeClassName="NavigationMenu__Link--active"
                   className="NavigationMenu__Link"
                   to={to}>{page.title}</NavLink>
