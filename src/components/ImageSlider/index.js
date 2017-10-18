@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './styles.css';
 import ImageGallery from '../ImageGallery';
+import PropTypes from 'prop-types';
 
 class ImageSlider extends Component {
   constructor(props) {
@@ -39,10 +40,10 @@ class ImageSlider extends Component {
       </div>
     );
   }
-};
+}
 
 ImageSlider.propTypes = {
-  images: React.PropTypes.array.isRequired
+  images: PropTypes.array.isRequired
 };
 
 export default ImageSlider;

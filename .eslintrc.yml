@@ -1,14 +1,13 @@
 env:
   browser: true
   es6: true
-extends: 'eslint:recommended'
+extends: ["react-app", "eslint:recommended"]
 parserOptions:
   ecmaFeatures:
     experimentalObjectRestSpread: true
     jsx: true
   sourceType: module
-plugins:
-  - react
+plugins: ["react", "jsx-a11y"]
 rules:
   indent:
     - error
@@ -22,3 +21,4 @@ rules:
   semi:
     - error
     - always
+  no-useless-computed-key: "off"

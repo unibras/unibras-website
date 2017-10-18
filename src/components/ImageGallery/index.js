@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './styles.css';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
 
 class ImageGallery extends Component {
   constructor(props) {
@@ -66,8 +67,8 @@ class ImageGallery extends Component {
 };
 
 ImageGallery.propTypes = {
-  images: React.PropTypes.array.isRequired,
-  onIndexChange: React.PropTypes.func
+  images: PropTypes.array.isRequired,
+  onIndexChange: PropTypes.func
 };
 
 export default ImageGallery;

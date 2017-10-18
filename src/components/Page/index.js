@@ -3,6 +3,7 @@ import './styles.css';
 import ImageSlider from '../../components/ImageSlider';
 import PageBody from '../../components/PageBody';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
 
 function findCurrentPage(path, pages) {
   return pages.find(page => (page.id === path || (page.position === 1 && !path)));
@@ -19,7 +20,7 @@ class Page extends Component {
     const page = findCurrentPage(pathname, siteMap);
     const subpage = findCurrentSubPage(subpathname, page);
     return (
-      <div className={classnames(this.props.className, "App__Body", "Page")}>
+      <div className={classnames(this.props.className, 'Page')}>
         {page.slider && <ImageSlider images={page.slider} />}
         {page.body && <PageBody page={subpage || page} />}
       </div>
@@ -28,7 +29,7 @@ class Page extends Component {
 }
 
 Page.propTypes = {
-  siteMap: React.PropTypes.array.isRequired
+  siteMap: PropTypes.array.isRequired
 };
 
 export default Page;

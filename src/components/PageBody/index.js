@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './styles.css';
 import ImageGallery from '../../components/ImageGallery';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
 
 class Page extends Component {
   render() {
@@ -18,7 +19,7 @@ class Page extends Component {
 }
 
 Page.propTypes = {
-  page: React.PropTypes.object.isRequired
+  page: PropTypes.object.isRequired
 };
 
 export default Page;

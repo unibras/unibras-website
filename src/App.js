@@ -38,7 +38,7 @@ class App extends Component {
           <Route
               path="/:page?/:subpage?"
               render={({match}) => (
-                <Page siteMap={siteMap} pathname={match.params.page} subpathname={match.params.subpage}/>
+                <Page siteMap={siteMap} pathname={match.params.page} subpathname={match.params.subpage} className="App__Body"/>
               )}
           />
           <Footer />
