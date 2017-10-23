@@ -7,10 +7,10 @@ import Page from './components/Page';
 import './App.css';
 
 let base = Rebase.createClass({
-  apiKey: "AIzaSyADDtHRdt0CYOy3uTQCBpJZ2iRfMQo_S1U",
-  authDomain: "unibras-website.firebaseapp.com",
-  databaseURL: "https://unibras-website.firebaseio.com",
-  storageBucket: "unibras-website.appspot.com"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET
 });
 
 class App extends Component {
