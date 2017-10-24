@@ -15,6 +15,10 @@ function findCurrentSubPage(subpath, page) {
 }
 
 class Page extends Component {
+  static propTypes = {
+    siteMap: PropTypes.array.isRequired
+  }
+
   render() {
     const { pathname, subpathname, siteMap } = this.props;
     const page = findCurrentPage(pathname, siteMap);
@@ -27,9 +31,5 @@ class Page extends Component {
     );
   }
 }
-
-Page.propTypes = {
-  siteMap: PropTypes.array.isRequired
-};
 
 export default Page;
