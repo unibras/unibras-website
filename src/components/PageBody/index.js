@@ -5,6 +5,10 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
 class Page extends Component {
+  static propTypes = {
+    page: PropTypes.object.isRequired
+  }
+
   render() {
     const { page } = this.props;
     return (
@@ -17,9 +21,5 @@ class Page extends Component {
     );
   }
 }
-
-Page.propTypes = {
-  page: PropTypes.object.isRequired
-};
 
 export default Page;

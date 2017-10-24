@@ -1,0 +1,30 @@
+.ImageDetail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ImageDetail_Frame {
+  max-width: 90%;
+  max-height: 800px;
+}
+
+.ImageDetail_Description {
+  text-align: center;
+  font-size: 12px;
+}
+
+.ImageDetail_Image {
+  min-width: 200px;
+  min-height: 200px;
+  background: linear-gradient(135deg, #E3E3E3 0%, #D6D6D6 50%, #8C8C8C 100%);
+  color: transparent;
+  border-radius: 2px;
+}

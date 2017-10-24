@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './styles.css';
 import ImageSlider from '../../components/ImageSlider';
 import PageBody from '../../components/PageBody';
+import PageGallery from '../../components/PageGallery';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -15,6 +16,10 @@ function findCurrentSubPage(subpath, page) {
 }
 
 class Page extends Component {
+  static propTypes = {
+    siteMap: PropTypes.array.isRequired
+  }
+
   render() {
     const { pathname, subpathname, siteMap } = this.props;
     const page = findCurrentPage(pathname, siteMap);
@@ -23,13 +28,10 @@ class Page extends Component {
       <div className={classnames(this.props.className, 'Page')}>
         {page.slider && <ImageSlider images={page.slider} />}
         {page.body && <PageBody page={subpage || page} />}
+        {page.gallery && <PageGallery page={subpage || page} />}
       </div>
     );
   }
 }
-
-Page.propTypes = {
-  siteMap: PropTypes.array.isRequired
-};
 
 export default Page;

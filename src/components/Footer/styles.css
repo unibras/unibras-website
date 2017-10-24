@@ -4,6 +4,7 @@
   color: #918F8E;
   font-size: 1rem;
   line-height: 1;
+  z-index: 3;
 }
 
 .Footer__revision {
