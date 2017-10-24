@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './styles.css';
 import ImageSlider from '../../components/ImageSlider';
 import PageBody from '../../components/PageBody';
+import PageGallery from '../../components/PageGallery';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -27,6 +28,7 @@ class Page extends Component {
       <div className={classnames(this.props.className, 'Page')}>
         {page.slider && <ImageSlider images={page.slider} />}
         {page.body && <PageBody page={subpage || page} />}
+        {page.gallery && <PageGallery page={subpage || page} />}
       </div>
     );
   }
