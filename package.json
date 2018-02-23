@@ -2,7 +2,7 @@
   "name": "unibras",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://unibras.github.io/unibras-website/",
+  "homepage": "https://unibras.com.ar",
   "dependencies": {
     "firebase": "^4.6.0",
     "prop-types": "^15.6.0",
