@@ -2,6 +2,11 @@
   text-align: right;
   overflow: hidden;
 }
+@media screen and (max-width: 900px) {
+  .NavigationMenu {
+    text-align: left;
+  }
+}
 
 .NavigationMenu__Link {
   text-transform: uppercase;
@@ -12,6 +17,11 @@
   font-weight: 200;
   font-family: var(--font-family-secondary);
   transition: color .25s;
+}
+@media screen and (max-width: 900px) {
+  .NavigationMenu__Link {
+    margin-right: 1rem;
+  }
 }
 
 .NavigationMenu__Link:hover {
@@ -29,15 +39,21 @@
 .NavigationMenu__Link--Secondary {
   font-size: 1.1rem;
 }
+@media screen and (max-width: 900px) {
+  .NavigationMenu__Link--Secondary {
+    font-size: .9rem;
+  }
+}
 
 .NavigationMenu__Secondary {
-  transition: height .5s, opacity 1s;
-  height: 0;
+  transition: max-height .5s, opacity 1s;
+  max-height: 0;
   opacity: 0;
+  margin-bottom: .4rem;
 }
 
 .NavigationMenu__Secondary--open {
-  transition: height .5s, opacity 1.5s;
-  height: 2rem;
+  transition: max-height .5s, opacity 1.5s;
+  max-height: 4rem;
   opacity: 1;
 }

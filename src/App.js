@@ -3,7 +3,7 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Page from './components/Page';
-import firebase from 'firebase'
+import firebase from 'firebase';
 import './App.css';
 
 const config = {
@@ -20,8 +20,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      siteMap: []
-    }
+      siteMap: [],
+    };
   }
 
   componentDidMount() {
@@ -39,10 +39,10 @@ class App extends Component {
         <div className="App">
           <Header siteMap={siteMap} />
           <Route
-              path="/:page?/:subpage?"
-              render={({match}) => (
-                <Page siteMap={siteMap} pathname={match.params.page} subpathname={match.params.subpage} className="App__Body"/>
-              )}
+            path="/:page?/:subpage?"
+            render={({match}) => (
+              <Page siteMap={siteMap} pathname={match.params.page} subpathname={match.params.subpage} className="App__Body"/>
+            )}
           />
           <Footer />
         </div>

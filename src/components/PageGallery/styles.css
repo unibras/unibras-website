@@ -13,6 +13,12 @@ root {
   max-height: 37vh;
   overflow: auto;
 }
+@media screen and (max-width: 900px) {
+  .PageGallery {
+    width: 100%;
+    max-height: none;
+  }
+}
 
 .PageGallery__Image {
   flex-basis: calc(33.3333% - 2rem);

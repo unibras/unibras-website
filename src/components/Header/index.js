@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 const Header = (props) => {
   return (
     <div className={classnames(props.className, 'Header')}>
-      <img src={logo} className="Headder__Logo" alt="Unibras logo" />
+      <img src={logo} className="Header__Logo" alt="Unibras logo" />
       <NavigationMenu siteMap={props.siteMap} />
     </div>
   );

@@ -7,6 +7,13 @@
   display: flex;
   flex-direction: column;
 }
+@media screen and (max-width: 900px) {
+  .ImageSlider {
+    width: 100%;
+    height: calc(100vh - 8.9rem);
+    justify-content: center;
+  }
+}
 
 .ImageSlider__Wrapper {
   position: relative;

@@ -6,6 +6,12 @@
   display: flex;
   color: white;
 }
+@media screen and (max-width: 900px) {
+  .PageBody {
+    width: 100%;
+    flex-direction: column;
+  }
+}
 
 .PageBody__Description {
   flex-grow: 1;
@@ -14,10 +20,22 @@
   overflow: auto;
   padding-right: 2rem;
 }
+@media screen and (max-width: 900px) {
+  .PageBody__Description {
+    max-height: none;
+    overflow: visible;
+  }
+}
 
 .PageBody__Gallery {
   flex-grow: 1;
   flex-basis: 50%;
+}
+@media screen and (max-width: 900px) {
+  .PageBody__Gallery {
+    margin-top: 1.6rem;
+    height: 25rem;
+  }
 }
 
 .PageBody__Title {
