@@ -45,12 +45,14 @@ export class ImageDetail extends Component {
         onClick={onClose}
         onKeyDown={this.onKeyDown}
         ref={(el) => { this.overlay = el; }}>
-        <div className="ImageDetail_Frame">
-          <img src={imageUrl} alt={image.description} className="ImageDetail_Image" />
-          <p className="ImageDetail_Description">{image.description}</p>
-        </div>
+        { imageUrl &&
+          <div className="ImageDetail_Frame">
+            <img src={imageUrl} alt={image.description} className="ImageDetail_Image" />
+            <p className="ImageDetail_Description">{image.description}</p>
+          </div>
+        }
       </div>
-    )
+    );
   }
 }
 

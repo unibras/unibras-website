@@ -45,7 +45,7 @@ class NavigationMenu extends React.Component {
             );
           })}
         </div>
-        <div className={classnames('NavigationMenu__Secondary', {['NavigationMenu__Secondary--open']: currentPage.subsections})}>
+        <div className={classnames('NavigationMenu__Secondary', {'NavigationMenu__Secondary--open': currentPage.subsections})}>
           { currentPage && currentPage.subsections && currentPage.subsections.sort(sortPages).map((subpage) => {
             const to = `/${currentPage.id}/${subpage.id}`;
             return (
