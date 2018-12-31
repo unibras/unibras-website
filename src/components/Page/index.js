@@ -3,6 +3,7 @@ import './styles.css';
 import ImageSlider from '../../components/ImageSlider';
 import PageBody from '../../components/PageBody';
 import PageGallery from '../../components/PageGallery';
+import Contact from '../../components/Contact';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -29,6 +30,7 @@ class Page extends Component {
         {page.slider && <ImageSlider images={page.slider} />}
         {page.body && <PageBody page={subpage || page} />}
         {page.gallery && <PageGallery page={subpage || page} />}
+        {page.contact && <Contact page={page} />}
       </div>
     );
   }

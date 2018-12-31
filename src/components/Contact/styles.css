@@ -1,0 +1,96 @@
+.Contact {
+  width: 80%;
+  max-width: 900px;
+  background-color: rgba(0,0,0,.9);
+  border-radius: 2px;
+  padding: 2rem;
+  display: flex;
+  color: white;
+}
+@media screen and (max-width: 900px) {
+  .Contact {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.Contact__Description {
+  flex-grow: 1;
+  flex-basis: 50%;
+  max-height: 37vh;
+  overflow: auto;
+  padding-right: 2rem;
+}
+@media screen and (max-width: 900px) {
+  .Contact__Description {
+    max-height: auto;
+    overflow: visible;
+  }
+}
+
+.Contact__Form-Container {
+  flex-grow: 1;
+  flex-basis: 50%;
+}
+
+.Contact__Form {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 900px) {
+  .Contact__Form {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+}
+
+.Contact__Form-Label {
+  flex-basis: 14rem;
+  flex-shrink: 0;
+  margin-bottom: 1.6rem;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  padding-top: .4rem;
+}
+@media screen and (max-width: 900px) {
+  .Contact__Form-Label {
+    flex-basis: auto;
+  }
+}
+
+.Contact__Form-Field {
+  flex-basis: calc(100% - 14rem);
+  box-sizing: border-box;
+  margin-bottom: 1.6rem;
+  line-height: 1;
+  font-size: 1.6rem;
+  padding: .4rem .8rem;
+  border-radius: 2px;
+  border: none;
+  outline-color: var(--color-primary);
+}
+@media screen and (max-width: 900px) {
+  .Contact__Form-Field {
+    flex-basis: auto;
+  }
+}
+
+.Contact__Form-Submit {
+  margin-left: 14rem;
+  padding: 2px 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  line-height: 1.5;
+  font-size: 1.4rem;
+}
+@media screen and (max-width: 900px) {
+  .Contact__Form-Submit {
+    margin-left: 0;
+    margin-top: 1.6rem;
+  }
+}
+
+.Contact__Description-Paragraph {
+  margin: 1rem 0;
+  line-height: 1.4;
+}
