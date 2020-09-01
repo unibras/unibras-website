@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import './styles.css';
 
-const FORM_CARRY_ID = process.env.FORM_CARRY_ID;
+const REACT_APP_FORM_CARRY_ID = process.env.REACT_APP_FORM_CARRY_ID;
 
 class Contact extends Component {
   static propTypes = {
@@ -27,7 +27,7 @@ class Contact extends Component {
     }
     this.setState({inProgress: true});
 
-    const url = `https://formcarry.com/s/${FORM_CARRY_ID}`;
+    const url = `https://formcarry.com/s/${REACT_APP_FORM_CARRY_ID}`;
     const { name, phone, email, message } = this.state;
     const data = { name, phone, email, message };
 
